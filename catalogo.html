@@ -12,7 +12,7 @@
         <ul>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="catalogo.html">Catálogo</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
+            <!-- <li><a href="contacto.html">Contacto</a></li> -->
         </ul>
     </nav>
 
@@ -21,14 +21,15 @@
         <h1>Catálogo de Libros</h1>
 
         <!-- Barra de búsqueda -->
-        <input type="text" id="searchBar" placeholder="Buscar por título, autor, etc.">
+        <input type="text" id="searchBar" placeholder="Buscar">
 
         <!-- Filtros de colección -->
         <div id="filters">
-            <button onclick="filterBooks('Esencial')">Colección Esencial</button>
-            <button onclick="filterBooks('Compendios UNI')">Compendios UNI</button>
-            <button onclick="filterBooks('Humanidades')">Compendios de Humanidades</button>
+            <button onclick="filterBooks('Esencial')">Esencial</button>
+            <button onclick="filterBooks('Compendios')">Compendios</button>
+            <button onclick="filterBooks('Ciencias y Humanidades')">Ciencias y Humanidades</button>
             <button onclick="filterBooks('Temas Selectos')">Temas Selectos</button>
+            <button onclick="filterBooks('CepreUNI')">Temas Selectos</button>
             <!-- Puedes añadir más filtros aquí -->
         </div>
 
@@ -40,7 +41,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>© 2024 Catálogo de Libros Preuniversitarios. Todos los derechos reservados.</p>
+        <p>Éxitos en tu preparación, futuro Cachimbo</p>
     </footer>
 
     <!-- Script para manejar el catálogo -->
