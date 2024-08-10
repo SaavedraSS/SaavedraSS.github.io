@@ -11,9 +11,9 @@ async function loadBooks() {
 // Función para convertir el CSV en un array de objetos
 function parseCSV(data) {
     const lines = data.split('\n');
-    const headers = lines[0].split(',');
+    const headers = lines[0].split(';');
     return lines.slice(1).map(line => {
-        const values = line.split(',');
+        const values = line.split(';');
         let book = {};
         headers.forEach((header, index) => {
             book[header.trim()] = values[index].trim();
