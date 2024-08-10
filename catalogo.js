@@ -29,18 +29,29 @@ function displayBooks(books) {
     books.forEach(book => {
         const bookElement = document.createElement('div');
         bookElement.className = 'book';
-        bookElement.innerHTML = `
-            <img src="${book.Imagen}" alt="Portada de ${book.Título}">
-            <h3>${book.Título}</h3>
-            <p>${book.Autor}</p>
-            <p>Colección: ${book.Colección}</p>
-            <p>Estado: ${book.Estado}</p>
-            <p>Dueño: ${book.Dueño}</p>
-            <a href="https://wa.me/${book.WhatsApp}" class="whatsapp-link">Contactar</a>
-        `;
+        if (book.Estado == 'agotado'){
+            bookElement.innerHTML = `
+                <img src="imagenes/${book.Imagen}" alt="Portada de ${book.Título}">
+                <h3>${book.Título}</h3>
+                <p>Editorial: ${book.Editorial}</p>
+                <p>Colección: ${book.Colección}</p>
+                <h2>AGOTADO :(</h2>
+                <a href="https://wa.me/${book.WhatsApp}" class="whatsapp-link">Contactar al Vendedor</a>
+            `;
+        } else{
+            bookElement.innerHTML = `
+                <img src="imagenes/${book.Imagen}" alt="Portada de ${book.Título}">
+                <h3>${book.Título}</h3>
+                <p>Editorial: ${book.Editorial}</p>
+                <p>Colección: ${book.Colección}</p>
+                <a href="https://wa.me/${book.WhatsApp}" class="whatsapp-link">Contactar al Vendedor</a>
+            `;
+        }
         container.appendChild(bookElement);
     });
 }
+//<p>Dueño: ${book.Dueño}</p>
+
 
 // Función para filtrar libros por colección
 function filterBooks(coleccion) {
