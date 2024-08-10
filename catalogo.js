@@ -31,19 +31,19 @@ function displayBooks(books) {
         bookElement.className = 'book';
         if (book.Estado == 'agotado'){
             bookElement.innerHTML = `
-                <img src="imagenes/${book.Imagen}" alt="Portada de ${book.Título}">
-                <h3>${book.Título}</h3>
+                <img src="imagenes/${book.Imagen}" alt="Portada de ${book.Titulo}">
+                <h3>${book.Titulo}</h3>
                 <p>Editorial: ${book.Editorial}</p>
-                <p>Colección: ${book.Colección}</p>
+                <p>Colección: ${book.Coleccion}</p>
                 <h2>AGOTADO :(</h2>
                 <a href="https://wa.me/${book.WhatsApp}" class="whatsapp-link">Contactar al Vendedor</a>
             `;
         } else{
             bookElement.innerHTML = `
-                <img src="imagenes/${book.Imagen}" alt="Portada de ${book.Título}">
-                <h3>${book.Título}</h3>
+                <img src="imagenes/${book.Imagen}" alt="Portada de ${book.Titulo}">
+                <h3>${book.Titulo}</h3>
                 <p>Editorial: ${book.Editorial}</p>
-                <p>Colección: ${book.Colección}</p>
+                <p>Colección: ${book.Coleccion}</p>
                 <a href="https://wa.me/${book.WhatsApp}" class="whatsapp-link">Contactar al Vendedor</a>
             `;
         }
@@ -56,7 +56,7 @@ function displayBooks(books) {
 // Función para filtrar libros por colección
 function filterBooks(coleccion) {
     loadBooks().then(books => {
-        const filteredBooks = books.filter(book => book.Colección === coleccion);
+        const filteredBooks = books.filter(book => book.Coleccion === coleccion);
         displayBooks(filteredBooks);
     });
 }
@@ -66,8 +66,8 @@ document.getElementById('searchBar').addEventListener('input', function(e) {
     const term = e.target.value.toLowerCase();
     loadBooks().then(books => {
         const filteredBooks = books.filter(book => 
-            book.Título.toLowerCase().includes(term) || 
-            book.Autor.toLowerCase().includes(term)
+            book.Titulo.toLowerCase().includes(term) || 
+            book.Editorial.toLowerCase().includes(term)
         );
         displayBooks(filteredBooks);
     });
