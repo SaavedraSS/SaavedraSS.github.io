@@ -16,7 +16,9 @@ function parseCSV(data) {
         const values = line.split(';');
         let book = {};
         headers.forEach((header, index) => {
-            book[header.trim()] = values[index].trim();
+            if (header && values[index]) { // Validar que ambos existan
+                book[header.trim()] = values[index].trim();
+            }
         });
         return book;
     });
